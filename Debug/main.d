@@ -28,6 +28,19 @@ main.obj: C:/ti/TivaWare_C_Series-2.1.4.178/driverlib/uart.h
 main.obj: C:/ti/TivaWare_C_Series-2.1.4.178/utils/uartstdio.h
 main.obj: C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/stdarg.h
 main.obj: C:/ti/TivaWare_C_Series-2.1.4.178/driverlib/ssi.h
+main.obj: C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/stdlib.h
+main.obj: C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/stdio.h
+main.obj: ../i2cm_drv.h
+main.obj: ../hw_mpu6050.h
+main.obj: ../mpu6050.h
+main.obj: C:/ti/TivaWare_C_Series-2.1.4.178/inc/hw_sysctl.h
+main.obj: C:/ti/TivaWare_C_Series-2.1.4.178/inc/hw_i2c.h
+main.obj: C:/ti/TivaWare_C_Series-2.1.4.178/inc/hw_gpio.h
+main.obj: C:/ti/TivaWare_C_Series-2.1.4.178/driverlib/rom_map.h
+main.obj: C:/ti/TivaWare_C_Series-2.1.4.178/driverlib/i2c.h
+main.obj: C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/math.h
+main.obj: C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/_defs.h
+main.obj: C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/machine/_limits.h
 
 ../main.c:
 
@@ -84,4 +97,30 @@ C:/ti/TivaWare_C_Series-2.1.4.178/utils/uartstdio.h:
 C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/stdarg.h:
 
 C:/ti/TivaWare_C_Series-2.1.4.178/driverlib/ssi.h:
+
+C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/stdlib.h:
+
+C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/stdio.h:
+
+../i2cm_drv.h:
+
+../hw_mpu6050.h:
+
+../mpu6050.h:
+
+C:/ti/TivaWare_C_Series-2.1.4.178/inc/hw_sysctl.h:
+
+C:/ti/TivaWare_C_Series-2.1.4.178/inc/hw_i2c.h:
+
+C:/ti/TivaWare_C_Series-2.1.4.178/inc/hw_gpio.h:
+
+C:/ti/TivaWare_C_Series-2.1.4.178/driverlib/rom_map.h:
+
+C:/ti/TivaWare_C_Series-2.1.4.178/driverlib/i2c.h:
+
+C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/math.h:
+
+C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/_defs.h:
+
+C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/machine/_limits.h:
 

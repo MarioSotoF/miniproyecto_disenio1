@@ -1,4 +1,4 @@
-//*****************************************************************************
+//***************************
 //
 // Startup code for use with TI's Code Composer Studio.
 //
@@ -20,50 +20,51 @@
 // CIRCUMSTANCES, BE LIABLE FOR SPECIAL, INCIDENTAL, OR CONSEQUENTIAL
 // DAMAGES, FOR ANY REASON WHATSOEVER.
 //
-//*****************************************************************************
+//***************************
 
 #include <stdint.h>
 
-//*****************************************************************************
+//***************************
 //
 // Forward declaration of the default fault handlers.
 //
-//*****************************************************************************
+//***************************
 void ResetISR(void);
 static void NmiSR(void);
 static void FaultISR(void);
 static void IntDefaultHandler(void);
 
-//*****************************************************************************
+//***************************
 //
 // External declaration for the reset handler that is to be called when the
 // processor is started
 //
-//*****************************************************************************
+//***************************
 extern void _c_int00(void);
 extern void Timer0IntHandler(void);
+void I2CMSimpleIntHandler(void);
 
-//*****************************************************************************
+//***************************
 //
 // Linker variable that marks the top of the stack.
 //
-//*****************************************************************************
+//***************************
 extern uint32_t __STACK_TOP;
 
-//*****************************************************************************
+//***************************
 //
 // External declarations for the interrupt handlers used by the application.
 //
-//*****************************************************************************
+//***************************
 // To be added by user
 
-//*****************************************************************************
+//***************************
 //
 // The vector table.  Note that the proper constructs must be placed on this to
 // ensure that it ends up at physical address 0x0000.0000 or at the start of
 // the program if located at a start address other than 0.
 //
-//*****************************************************************************
+//***************************
 #pragma DATA_SECTION(g_pfnVectors, ".intvecs")
 void (* const g_pfnVectors[])(void) =
 {
@@ -225,7 +226,7 @@ void (* const g_pfnVectors[])(void) =
     IntDefaultHandler                       // PWM 1 Fault
 };
 
-//*****************************************************************************
+//***************************
 //
 // This is the code that gets called when the processor first starts execution
 // following a reset event.  Only the absolutely necessary set is performed,
@@ -234,7 +235,7 @@ void (* const g_pfnVectors[])(void) =
 // resetting the bits in that register) are left solely in the hands of the
 // application.
 //
-//*****************************************************************************
+//***************************
 void
 ResetISR(void)
 {
@@ -246,13 +247,13 @@ ResetISR(void)
           "    b.w     _c_int00");
 }
 
-//*****************************************************************************
+//***************************
 //
 // This is the code that gets called when the processor receives a NMI.  This
 // simply enters an infinite loop, preserving the system state for examination
 // by a debugger.
 //
-//*****************************************************************************
+//***************************
 static void
 NmiSR(void)
 {
@@ -264,13 +265,13 @@ NmiSR(void)
     }
 }
 
-//*****************************************************************************
+//***************************
 //
 // This is the code that gets called when the processor receives a fault
 // interrupt.  This simply enters an infinite loop, preserving the system state
 // for examination by a debugger.
 //
-//*****************************************************************************
+//***************************
 static void
 FaultISR(void)
 {
@@ -282,13 +283,13 @@ FaultISR(void)
     }
 }
 
-//*****************************************************************************
+//***************************
 //
 // This is the code that gets called when the processor receives an unexpected
 // interrupt.  This simply enters an infinite loop, preserving the system state
 // for examination by a debugger.
 //
-//*****************************************************************************
+//***************************
 static void
 IntDefaultHandler(void)
 {

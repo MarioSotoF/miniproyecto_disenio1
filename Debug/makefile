@@ -11,7 +11,9 @@ GEN_CMDS__FLAG :=
 
 ORDERED_OBJS += \
 "./adc_timer_uart_startup_ccs.obj" \
+"./i2cm_drv.obj" \
 "./main.obj" \
+"./mpu6050.obj" \
 "./uartstdio.obj" \
 "C:/ti/TivaWare_C_Series-2.1.4.178/driverlib/ccs/Debug/driverlib.lib" \
 "../tm4c123gh6pm.cmd" \
@@ -157,8 +159,8 @@ miniproyecto.hex: $(EXE_OUTPUTS)
 # Other Targets
 clean:
 	-$(RM) $(BIN_OUTPUTS__QUOTED)$(EXE_OUTPUTS__QUOTED)
-	-$(RM) "adc_timer_uart_startup_ccs.obj" "main.obj" "uartstdio.obj" 
-	-$(RM) "adc_timer_uart_startup_ccs.d" "main.d" "uartstdio.d" 
+	-$(RM) "adc_timer_uart_startup_ccs.obj" "i2cm_drv.obj" "main.obj" "mpu6050.obj" "uartstdio.obj" 
+	-$(RM) "adc_timer_uart_startup_ccs.d" "i2cm_drv.d" "main.d" "mpu6050.d" "uartstdio.d" 
 	-@echo 'Finished clean'
 	-@echo ' '
 
