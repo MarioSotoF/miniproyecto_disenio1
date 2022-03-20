@@ -120,7 +120,7 @@
 uint16_t dato;
 uint16_t valor;
 
-float v0, v1;
+//float v0, v1;
 float e_k_1 = 0;
 float E_k = 0;
 float e_k;
@@ -130,7 +130,10 @@ float kP = 15;
 float kI = 0;
 float kD = 0;
 float u_k2;
+float referencia = 0;
+float x = 0, y = 0, z = 0;
 uint16_t freq_muestreo = 10000;
+
 //***************************
 //
 //! \addtogroup adc_examples_list
@@ -269,7 +272,7 @@ void MPU6050Example(void)
 //
 float fAccel[3], fGyro[3];
     tMPU6050 sMPU6050;
-    float x = 0, y = 0, z = 0;
+
 
     //
     // Initialize the MPU6050. This code assumes that the I2C master instance
@@ -377,14 +380,14 @@ Timer0IntHandler(void)
 
     ADCSequenceDataGet(ADC0_BASE, 2, pui32ADC0Value);  // Notar el cambio de "secuencia".
 
-    v0 = pui32ADC0Value[0]*3.3/4095;  // REFERENCIA                  -  PE3
-    v1 = pui32ADC0Value[1]*3.3/4095;  // RETROALIMENTACION (PLANTA)  -  PE2
+//    v0 = pui32ADC0Value[0]*3.3/4095;  // REFERENCIA                  -  PE3
+//    v1 = pui32ADC0Value[1]*3.3/4095;  // RETROALIMENTACION (PLANTA)  -  PE2
 
 
     /////////////////////////////
     // ALGORITMO DEL PID DIGITAL
     /////////////////////////////
-    e_k = v0 - v1;
+    e_k = referencia - x;
     eD = e_k - e_k_1;
     E_k = E_k + e_k;
     u_k = kP*e_k + kI*(E_k/freq_muestreo) + kD*eD*freq_muestreo;
