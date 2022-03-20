@@ -332,7 +332,7 @@ float fAccel[3], fGyro[3];
 
         //x = fGyro[0];
         //y = fGyro[1];
-        z = fGyro[2];
+        z = (atan2(fAccel[2], sqrt (fAccel[0] * fAccel[0] + fAccel[1] * fAccel[1]))*180.0)/3.14;
 
         x = (atan2(fAccel[0], sqrt (fAccel[1] * fAccel[1] + fAccel[2] * fAccel[2]))*180.0)/3.14;
 
