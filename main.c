@@ -394,12 +394,12 @@ Timer0IntHandler(void)
     e_k_1 = e_k;
 
     //Sentencia para definir límites
-    if (u_k>6)
-        u_k = 6;
-    else if (u_k<-6)
-        u_k = -6;
+    if (u_k>12)
+        u_k = 12;
+    else if (u_k<-12)
+        u_k = -12;
 
-    u_k2 = u_k*341.25 + 2047.5;//Mapeo de datos
+    u_k2 = u_k*170.625 + 2047.5;//Mapeo de datos
     valor = (uint16_t) (u_k2);
 
     //Preparación para envío de datos
