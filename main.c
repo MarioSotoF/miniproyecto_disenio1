@@ -131,6 +131,7 @@ float kI = 0;
 float kD = 0;
 float u_k2;
 float referencia = 0;
+uint8_t mat = 0;
 float x = 0, y = 0, z = 0;
 uint16_t freq_muestreo = 10000;
 
@@ -341,6 +342,10 @@ float fAccel[3], fGyro[3];
 
         y = (atan2(fAccel[1], sqrt (fAccel[0] * fAccel[0] + fAccel[2] * fAccel[2]))*180.0)/3.14;
 
+        mat = UARTCharGetNonBlocking(UART0_BASE);
+        if (mat == 7){
+            UARTCharPut(UART0_BASE, (int)x);
+        }
 
         UARTprintf("Ang. X: %d | Ang. Y: %d | Ang. Z: %d\n", (int)x, (int)y, (int)z);
 
